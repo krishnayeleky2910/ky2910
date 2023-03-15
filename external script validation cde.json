@@ -1,0 +1,656 @@
+{
+  "pipelineJson": {
+    "pipeline_version": "v0.902",
+    "linkToPortIdProperty": "endPortId",
+    "is_pipeline_validated": true,
+    "is_active": true,
+    "nodeKeyProperty": "nodeId",
+    "refresh_freq": {
+      "consider_timezone": true,
+      "cron_freq": "0 50 19 13 3 ? 2023",
+      "cron_timezone": "Asia/Calcutta",
+      "cron_type": "one_time"
+    },
+    "linkToKeyProperty": "toNodeId",
+    "source_records": null,
+    "preview_records": null,
+    "linkDataArray": [
+      {
+        "endPortId": 167870207043303,
+        "data": {
+          "schema": {},
+          "preview_data": {}
+        },
+        "originPortId": 167869393601104,
+        "toNodeId": 167870207043202,
+        "linkType": "dottedlink",
+        "fromNodeId": 167869393601002,
+        "link_id": 167870207175005
+      },
+      {
+        "endPortId": 167870209855908,
+        "data": {
+          "schema": {
+            "type": "struct",
+            "fields": [
+              {
+                "metadata": {},
+                "nullable": true,
+                "name": "site_id",
+                "type": "integer"
+              },
+              {
+                "metadata": {},
+                "nullable": true,
+                "name": "site_name",
+                "type": "string"
+              },
+              {
+                "metadata": {},
+                "nullable": true,
+                "name": "tid",
+                "type": "integer"
+              }
+            ]
+          },
+          "preview_data": {}
+        },
+        "originPortId": 167870207043304,
+        "toNodeId": 167870209855706,
+        "linkType": "schemalink",
+        "fromNodeId": 167870207043202,
+        "link_id": 167870209981709
+      }
+    ],
+    "nodeDataArray": [
+      {
+        "uiNodeOrder": "5A",
+        "node_error_msg": "",
+        "nodeVersion": 1,
+        "nodeTypeId": 23,
+        "nodeTypeUiConfig": {
+          "acceptedPortProperties": [
+            {
+              "port_properties_id": 10,
+              "port_properties": {
+                "cursor": "pointer",
+                "porttype_name": "blue",
+                "fill": "#3498db",
+                "stroke": "#3498db",
+                "toLinkable": true,
+                "porttype_id": 1,
+                "fromLinkable": false,
+                "width": 9,
+                "alignment": false,
+                "alignment_properties": {},
+                "port_location": "Left",
+                "height": 9,
+                "acceptLinkTypes": [
+                  {
+                    "node_linktype_id": 1,
+                    "outputMinLinks": 0,
+                    "inputMinLinks": 0,
+                    "node_linktype_name": "dottedlink",
+                    "inputMaxLinks": 1,
+                    "outputMaxLinks": 0
+                  }
+                ]
+              }
+            },
+            {
+              "port_properties_id": 11,
+              "port_properties": {
+                "cursor": "pointer",
+                "porttype_name": "blue",
+                "fill": "#3498db",
+                "stroke": "#3498db",
+                "toLinkable": false,
+                "porttype_id": 1,
+                "fromLinkable": true,
+                "width": 9,
+                "alignment": false,
+                "alignment_properties": {},
+                "port_location": "Right",
+                "height": 9,
+                "acceptLinkTypes": [
+                  {
+                    "node_linktype_id": 1,
+                    "outputMinLinks": 0,
+                    "inputMinLinks": 0,
+                    "node_linktype_name": "dottedlink",
+                    "inputMaxLinks": 0,
+                    "outputMaxLinks": 1
+                  }
+                ]
+              }
+            }
+          ],
+          "initialLabel": "External SQL Script ",
+          "initialXPos": 100,
+          "group_label": "E",
+          "nodeGroupType": "external_executor",
+          "icon": "external_sql_script.svg",
+          "groupLabel": "External Executors",
+          "node_properties_id": 23,
+          "initialYPos": 100,
+          "nodeGroupTypeId": 6
+        },
+        "node_form_default_values": {
+          "default_transaction": false
+        },
+        "node_execution": "",
+        "node_metrics": {
+          "records_count": null,
+          "time_elapsed": ""
+        },
+        "nodeTypeName": "external_sql_script",
+        "outputLinks": [
+          167870207175005
+        ],
+        "is_node_validated": true,
+        "configTypeId": 198,
+        "inputLinks": [],
+        "config": {
+          "nodeName": "hive script",
+          "credential_name": "cdw hive creds",
+          "connection_type": "hive",
+          "description": "",
+          "connection_type_id": 7,
+          "credential_type_id": 1,
+          "jdbc_url": "jdbc:hive2://hs2-hive-cdpdevenv.dw-cdpdevenv.acx5-vcqk.cloudera.site/default;transportMode=http;httpPath=cliservice;socketTimeout=60;ssl=true;retries=3;",
+          "tags": [],
+          "credential_type": "Username with password",
+          "driver": "org.apache.hive.jdbc.HiveDriver",
+          "sql_queries": [
+            {
+              "error_msg": "",
+              "sql_script": "select * from foundation.action_type"
+            }
+          ],
+          "transaction": false,
+          "credential_id": 9634
+        },
+        "nodeId": 167869393601002,
+        "nodeLabel": "External SQL Script",
+        "nodeUiConfig": {
+          "yPos": 40,
+          "ports_info": [
+            {
+              "data": {
+                "schema": {},
+                "file_modified_ts": ""
+              },
+              "port_properties_id": 10,
+              "port_id": 167869393601103,
+              "port_location": "Left"
+            },
+            {
+              "data": {
+                "schema": {},
+                "file_modified_ts": ""
+              },
+              "port_properties_id": 11,
+              "port_id": 167869393601104,
+              "port_location": "Right"
+            }
+          ],
+          "xPos": -690
+        },
+        "configTypeName": "vue template sqlscript executor config Curation UI"
+      },
+      {
+        "uiNodeOrder": "1B",
+        "node_error_msg": "",
+        "nodeVersion": 1,
+        "nodeTypeId": 2,
+        "nodeTypeUiConfig": {
+          "acceptedPortProperties": [
+            {
+              "port_properties_id": 1,
+              "port_properties": {
+                "cursor": "pointer",
+                "porttype_name": "blue",
+                "fill": "#3498db",
+                "stroke": "#3498db",
+                "toLinkable": true,
+                "porttype_id": 1,
+                "fromLinkable": false,
+                "width": 9,
+                "alignment": false,
+                "alignment_properties": {},
+                "port_location": "Left",
+                "height": 9,
+                "acceptLinkTypes": [
+                  {
+                    "node_linktype_id": 1,
+                    "outputMinLinks": 0,
+                    "inputMinLinks": 0,
+                    "node_linktype_name": "dottedlink",
+                    "inputMaxLinks": 9999,
+                    "outputMaxLinks": 0
+                  }
+                ]
+              }
+            },
+            {
+              "port_properties_id": 4,
+              "port_properties": {
+                "cursor": "pointer",
+                "porttype_name": "white",
+                "fill": "white",
+                "stroke": "gray",
+                "toLinkable": false,
+                "porttype_id": 2,
+                "fromLinkable": true,
+                "width": 15,
+                "alignment": false,
+                "alignment_properties": {},
+                "port_location": "Right",
+                "height": 15,
+                "acceptLinkTypes": [
+                  {
+                    "node_linktype_id": 2,
+                    "outputMinLinks": 1,
+                    "inputMinLinks": 0,
+                    "node_linktype_name": "schemalink",
+                    "inputMaxLinks": 0,
+                    "outputMaxLinks": 9999
+                  }
+                ]
+              }
+            }
+          ],
+          "initialLabel": "Data Connection Dataset Source",
+          "initialXPos": 100,
+          "group_label": "S",
+          "nodeGroupType": "source",
+          "icon": "dataconnection.svg",
+          "groupLabel": "Sources",
+          "node_properties_id": 2,
+          "initialYPos": 100,
+          "nodeGroupTypeId": 2
+        },
+        "node_form_default_values": {
+          "default_infer_schema": false,
+          "default_enable_hash_partition": false,
+          "default_fetch_size": 5000,
+          "default_query_timeout": 0,
+          "default_records_to_infer_schema": 1,
+          "default_header": true,
+          "default_number_of_hash_partitions": 8
+        },
+        "node_execution": "local",
+        "node_metrics": {
+          "records_count": null,
+          "time_elapsed": ""
+        },
+        "nodeTypeName": "data_connection_source",
+        "outputLinks": [
+          167870209981709
+        ],
+        "is_node_validated": true,
+        "configTypeId": 190,
+        "inputLinks": [
+          167870207175005
+        ],
+        "config": {
+          "nodeName": "Data Connection Dataset Source 1",
+          "queryTimeout": 0,
+          "columns_info": [],
+          "data_connection_type_id": 1,
+          "description": "",
+          "infer_schema": true,
+          "object_component_id": 422,
+          "data_connection_id": 59,
+          "data_connection_name": "cg_source_db",
+          "credential_type_id": null,
+          "object_component_name": "chembl",
+          "read_options": [],
+          "jdbc_read_options": [],
+          "object_name": "binding_sites",
+          "data_connection_type": "postgres",
+          "records_for_infer_schema": 1,
+          "is_local": null,
+          "number_of_hash_partitions": 8,
+          "credential_name": "All Sources Creds",
+          "object_type": "relational",
+          "source_file_url": "",
+          "enable_hash_partition": false,
+          "jdbc_url": "jdbc:postgresql://w3.devpsql.modak.com:5432/source_db",
+          "object_id": 16701,
+          "tags": [],
+          "credential_type": "Username with password",
+          "driver": "org.postgresql.Driver",
+          "fetchsize": 5000,
+          "header": true,
+          "region": "",
+          "credential_id": 71
+        },
+        "nodeId": 167870207043202,
+        "nodeLabel": "Data Connection Dataset",
+        "nodeUiConfig": {
+          "yPos": 20,
+          "ports_info": [
+            {
+              "data": {
+                "schema": {},
+                "file_modified_ts": ""
+              },
+              "port_properties_id": 1,
+              "port_id": 167870207043303,
+              "port_location": "Left"
+            },
+            {
+              "data": {
+                "schema": {
+                  "type": "struct",
+                  "fields": [
+                    {
+                      "metadata": {},
+                      "nullable": true,
+                      "name": "site_id",
+                      "type": "integer"
+                    },
+                    {
+                      "metadata": {},
+                      "nullable": true,
+                      "name": "site_name",
+                      "type": "string"
+                    },
+                    {
+                      "metadata": {},
+                      "nullable": true,
+                      "name": "tid",
+                      "type": "integer"
+                    }
+                  ]
+                },
+                "file_modified_ts": ""
+              },
+              "port_properties_id": 4,
+              "port_id": 167870207043304,
+              "port_location": "Right"
+            }
+          ],
+          "xPos": -430
+        },
+        "configTypeName": "vue template datasource source config Curation UI"
+      },
+      {
+        "uiNodeOrder": "2G",
+        "node_error_msg": "",
+        "nodeVersion": 1,
+        "nodeTypeId": 13,
+        "nodeTypeUiConfig": {
+          "acceptedPortProperties": [
+            {
+              "port_properties_id": 2,
+              "port_properties": {
+                "cursor": "pointer",
+                "porttype_name": "blue",
+                "fill": "#3498db",
+                "stroke": "#3498db",
+                "toLinkable": false,
+                "porttype_id": 1,
+                "fromLinkable": true,
+                "width": 9,
+                "alignment": false,
+                "alignment_properties": {},
+                "port_location": "Right",
+                "height": 9,
+                "acceptLinkTypes": [
+                  {
+                    "node_linktype_id": 1,
+                    "outputMinLinks": 0,
+                    "inputMinLinks": 0,
+                    "node_linktype_name": "dottedlink",
+                    "inputMaxLinks": 0,
+                    "outputMaxLinks": 9999
+                  }
+                ]
+              }
+            },
+            {
+              "port_properties_id": 3,
+              "port_properties": {
+                "cursor": "pointer",
+                "porttype_name": "white",
+                "fill": "white",
+                "stroke": "gray",
+                "toLinkable": true,
+                "porttype_id": 2,
+                "fromLinkable": false,
+                "width": 15,
+                "alignment": false,
+                "alignment_properties": {},
+                "port_location": "Left",
+                "height": 15,
+                "acceptLinkTypes": [
+                  {
+                    "node_linktype_id": 2,
+                    "outputMinLinks": 0,
+                    "inputMinLinks": 1,
+                    "node_linktype_name": "schemalink",
+                    "inputMaxLinks": 1,
+                    "outputMaxLinks": 0
+                  }
+                ]
+              }
+            }
+          ],
+          "initialLabel": "Trash",
+          "initialXPos": 100,
+          "group_label": "T",
+          "nodeGroupType": "destination",
+          "icon": "trash.svg",
+          "groupLabel": "Destinations",
+          "node_properties_id": 13,
+          "initialYPos": 100,
+          "nodeGroupTypeId": 3
+        },
+        "node_form_default_values": {},
+        "node_execution": "",
+        "node_metrics": {
+          "records_count": null,
+          "time_elapsed": ""
+        },
+        "nodeTypeName": "trash",
+        "outputLinks": [],
+        "is_node_validated": true,
+        "configTypeId": 213,
+        "inputLinks": [
+          167870209981709
+        ],
+        "config": {
+          "nodeName": "Trash 1",
+          "description": "",
+          "tags": []
+        },
+        "nodeId": 167870209855706,
+        "nodeLabel": "Trash",
+        "nodeUiConfig": {
+          "yPos": -4.738125399223691,
+          "ports_info": [
+            {
+              "data": {
+                "schema": {},
+                "file_modified_ts": ""
+              },
+              "port_properties_id": 2,
+              "port_id": 167870209855807,
+              "port_location": "Right"
+            },
+            {
+              "data": {
+                "schema": {},
+                "file_modified_ts": ""
+              },
+              "port_properties_id": 3,
+              "port_id": 167870209855908,
+              "port_location": "Left"
+            }
+          ],
+          "xPos": -219.27314347944275
+        },
+        "configTypeName": "vue template trash destination config Curation UI"
+      }
+    ],
+    "last_validation_ts": "2023-03-13 14:18:11.493",
+    "linkFromKeyProperty": "fromNodeId",
+    "pipelineId": 11700,
+    "enable_cache": false,
+    "pipeline_config": {
+      "flow_details": {
+        "post_conditions": {
+          "rest_api_details": [],
+          "enabled": false
+        },
+        "spark_config": {
+          "num_executors": "5",
+          "executor_memory": "3G",
+          "driver_memory": "2G",
+          "solr_batch_size": "10000",
+          "parallel_threads": "5",
+          "fetch_size": "1000",
+          "driver_cores": "1",
+          "executor_cores": "2"
+        },
+        "enable_spark_config": false,
+        "pipeline_retry": false,
+        "retry_count": 0,
+        "extra_spark_config": [
+          {
+            "property": "cde.iceberg.enabled",
+            "value": "false"
+          },
+          {
+            "property": "cores",
+            "value": "2"
+          },
+          {
+            "property": "spark.kerberos.access.hadoopFileSystems",
+            "value": "s3a://gratis-bucket-test,s3a://redshiftworkflowdevelopment,s3a://nabuingestion"
+          }
+        ],
+        "pipeline_flow_timeout": 24,
+        "pre_conditions": {
+          "pipeline_timeout": 8,
+          "pipeline_details": [
+            {
+              "status_code_id": 12,
+              "data_movement_id": 11705,
+              "data_movement_name": "test compute engine1",
+              "status_code_description": "SUCCESS"
+            }
+          ],
+          "enabled": true
+        },
+        "email_notification": {
+          "on_failure": [
+            "bhanuprakash.saraswathi@modak.com"
+          ],
+          "failure_email_check": true,
+          "on_success": [
+            "bhanuprakash.saraswathi@modak.com"
+          ],
+          "same_as_success_email_check": true,
+          "success_email_check": true
+        }
+      },
+      "pipeline_alerts": {
+        "duplicate_records": {
+          "alert_config": {
+            "default_threshold": null,
+            "alert_validation_type": null,
+            "alert_validation_type_id": null
+          },
+          "alert_type_id": "3",
+          "alert_label": "Duplicate Records",
+          "enable_alert": false,
+          "alert_type": "duplicate_records"
+        },
+        "rate_of_data_change": {
+          "alert_config": {
+            "default_threshold": 10,
+            "alert_validation_type": "Passive",
+            "alert_validation_type_id": "2"
+          },
+          "alert_type_id": "4",
+          "alert_label": "Rate of Data Change",
+          "enable_alert": false,
+          "alert_type": "rate_of_data_change"
+        },
+        "schema_drift": {
+          "alert_config": {
+            "default_threshold": null,
+            "alert_validation_type": null,
+            "alert_validation_type_id": null
+          },
+          "alert_type_id": "1",
+          "alert_label": "Schema Drift",
+          "enable_alert": false,
+          "alert_type": "schema_drift"
+        },
+        "no_data_change": {
+          "alert_config": {
+            "default_threshold": null,
+            "alert_validation_type": null,
+            "alert_validation_type_id": null
+          },
+          "alert_type_id": "2",
+          "alert_label": "No Data Change",
+          "enable_alert": false,
+          "alert_type": "no_data_change"
+        },
+        "row_count": {
+          "alert_config": {
+            "default_threshold": 10,
+            "alert_validation_type": "Passive",
+            "alert_validation_type_id": "2"
+          },
+          "alert_type_id": "5",
+          "alert_label": "Row Count",
+          "enable_alert": false,
+          "alert_type": "row_count"
+        },
+        "execution_time": {
+          "alert_config": {
+            "default_threshold": 10,
+            "alert_validation_type": "Passive",
+            "alert_validation_type_id": "2"
+          },
+          "alert_type_id": "6",
+          "alert_label": "Execution Time",
+          "enable_alert": false,
+          "alert_type": "execution_time"
+        }
+      },
+      "pipeline_error_msg": "",
+      "description": "",
+      "workflow_engine_name": "ingestion_workflow_engine",
+      "contact_info": {
+        "owner": "nabuadmin",
+        "email": "undefined"
+      },
+      "pipeline_form_default_values": {
+        "default_pipeline_retry": false,
+        "default_pipeline_flow_timeout": 24,
+        "default_retry_count": 0
+      },
+      "pipeline_name": "external script validation cde",
+      "tags": [],
+      "compute_engine_name": "CDE_3_2_test_ce",
+      "workspace_pipeline_type_id": 1,
+      "engine_type": "Spark",
+      "workflow_engine_id": 3,
+      "engine_sub_type": "CDE-Almaren",
+      "engine_id": 2,
+      "engine_type_id": 2,
+      "workspace_pipeline_type_name": "batch",
+      "compute_engine_id": 12,
+      "engine_sub_type_id": 13
+    },
+    "linkFromPortIdProperty": "originPortId",
+    "class": "go.GraphLinksModel"
+  }
+}
